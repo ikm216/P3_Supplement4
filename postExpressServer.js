@@ -12,11 +12,13 @@ app.post('/', (req, res) => {
     }
 });
 
-if (require.main === module) {
-    const PORT = 3000;
-    app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
-    });
-}
+app.get('/', (req, res) => {
+    res.send('Welcome to the server! Use POST to send content.');
+});
+
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
 
 module.exports = app
